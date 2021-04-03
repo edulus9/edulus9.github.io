@@ -1,0 +1,29 @@
+/*.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+    width:auto;
+    height:auto;
+}*/
+
+#splashDiv
+{
+  margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%)
+  height: 104px;
+  width: 140px;
+}
+#splashDiv img
+{
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  display: block;
+}

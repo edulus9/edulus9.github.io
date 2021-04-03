@@ -11,6 +11,7 @@
     Fore more details:
     * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
   -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <base href="/">
 
   <meta charset="UTF-8">
@@ -30,13 +31,18 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+
+<div id="splashDiv">
+  <img src="icons/mint.png" class="center"/><img src="icons/Google-flutter-logo.png" class="center"/>
+</div>
+
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('flutter-first-frame', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js?v=3751184439');
+        navigator.serviceWorker.register('flutter_service_worker.js?v=2613714183');
       });
     }
   </script>
