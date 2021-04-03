@@ -48533,7 +48533,7 @@ s=1
 break}else throw H.a("Could not launch "+a)
 case 1:return P.a4(q,r)}})
 return P.a5($async$iP,r)},
-R:function(a,b){var s=this,r=null,q="maint/underconst.png",p=s.c,o=M.wE(r,r,p,r,r,r,r,r),n=L.a4S("This website is currently under construction.",K.cf(b).am.a,0.3),m=L.a4S("To obtain more information about Edoardo Berton you can visit his social media!",K.cf(b).am.y,1.5),l=K.vL(30),k=t.fQ
+R:function(a,b){var s=this,r=null,q="assets/maint/underconst.png",p=s.c,o=M.wE(r,r,p,r,r,r,r,r),n=L.a4S("This website is currently under construction.",K.cf(b).am.a,0.3),m=L.a4S("To obtain more information about Edoardo Berton you can visit his social media!",K.cf(b).am.y,1.5),l=K.vL(30),k=t.fQ
 return new M.r3(T.B8(C.ih,H.c([o,M.wE(C.c4,V.a2V(new T.wB(C.al,C.pj,C.w0,C.l0,r,C.no,r,H.c([new Q.yg(n,m,new V.bg(20,20,20,20),r),V.a2V(new T.Ap(C.Q,C.pk,C.pl,C.l0,r,C.no,r,H.c([B.a_H(L.a_G(C.v3),new K.TM(s)),B.a_H(L.a_G(C.v2),new K.TN(s)),B.a_H(L.a_G(C.v1),new K.TO(s))],k),r),p,new X.cM(l,new Y.de(C.k,1,C.ah)))],k),r),r,s.f),C.is,r,r,r,new V.bg(70,70,70,70),r),new T.i_(C.rk,r,r,U.a3C(q,C.kT,35,1/0),r),new T.i_(C.nI,r,r,U.a3C(q,C.kT,35,1/0),r)],k),C.i7),r)}}
 K.TM.prototype={
 $0:function(){return this.a.iP("https://it.linkedin.com/in/edoardobertonfromvenice")},
