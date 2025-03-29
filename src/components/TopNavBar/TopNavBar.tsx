@@ -1,15 +1,17 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 import { AppBar, Toolbar, Button, MenuList, MenuListItem, Separator } from 'react95';
 
 export interface TopNavBarProps {}
 
 export const TopNavBar: React.FC<TopNavBarProps> = () => {
   const [isStartMenuOpen, setIsStartMenuOpen] = React.useState(false);
+  const { t } = useTranslation();
 
   return (
     <AppBar>
       <Toolbar style={{ justifyContent: 'space-between' }}>
-        <Button onClick={() => setIsStartMenuOpen(!isStartMenuOpen)}>Start</Button>
+        <Button onClick={() => setIsStartMenuOpen(!isStartMenuOpen)}>{t('start')}</Button>
         {isStartMenuOpen && (
           <MenuList
             style={{

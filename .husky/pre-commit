@@ -1,2 +1,3 @@
+npm install
 npm run husky:check:types
 npm run husky:lint
