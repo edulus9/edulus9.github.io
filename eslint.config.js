@@ -1,56 +1,67 @@
-import { defineConfig } from "eslint/config";
-import globals from "globals";
-import js from "@eslint/js";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import pluginReactHooks from "eslint-plugin-react-hooks";
-import pluginImport from "eslint-plugin-import";
+import { defineConfig } from '@eslint/config-helpers';
+import js from '@eslint/js';
+import pluginImport from 'eslint-plugin-import';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import pluginReact from 'eslint-plugin-react';
+import pluginReactHooks from 'eslint-plugin-react-hooks';
+import globals from 'globals';
+// eslint-disable-next-line import/no-unresolved
+import tseslint from 'typescript-eslint';
 
 export default defineConfig([
-  { files: ["**/*.{js,ts,jsx,tsx}"] },
-  { files: ["**/*.{js,ts,jsx,tsx}"], languageOptions: { globals: globals.browser } },
-  tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
   {
-    files: ["**/*.{js,ts,jsx,tsx}"],
+    files: ['**/*.{js,ts,jsx,tsx}'],
+    ignores: ['**/node_modules/**', '**/dist/**'],
+    languageOptions: {
+      globals: { ...globals.browser, process: true },
+    },
     settings: {
-      react: {
-        version: "detect",
+      'react': {
+        version: 'detect',
       },
-      "import/resolver": {
+      'import/resolver': {
         node: {
-          "extensions": [".js", ".jsx", ".ts", ".tsx"]
-        }
-      }
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+          moduleDirectory: ['src', 'node_modules'],
+        },
+      },
     },
     plugins: {
       js,
-      "react-hooks": pluginReactHooks,
-      import: pluginImport,
-    }, extends: ["js/recommended"],
+      'react-hooks': pluginReactHooks,
+      'import': pluginImport,
+    },
+    extends: [
+      tseslint.configs.recommended,
+      pluginReact.configs.flat.recommended,
+      eslintPluginPrettierRecommended,
+      'js/recommended',
+    ],
     rules: {
       // React-specific rules
-      "react/jsx-uses-react": "off", // Not needed with React 17+
-      "react/react-in-jsx-scope": "off", // Not needed with React 17+
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
-      "react/no-unknown-property": "error",
+      'react/jsx-uses-react': 'off', // Not needed with React 17+
+      'react/react-in-jsx-scope': 'off', // Not needed with React 17+
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+      'react/no-unknown-property': 'error',
 
       // Import sorting & best practices
-      "import/order": [
-        "error",
+      'import/order': [
+        'error',
         {
-          "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
-          "newlines-between": "always",
+          'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+          'newlines-between': 'never',
+          'alphabetize': { order: 'asc', caseInsensitive: true },
         },
       ],
-      "import/no-unresolved": "error",
-      "import/no-duplicates": "error",
-      "semi": ["error", "always"],
+      'import/no-unresolved': 'error',
+      'import/no-duplicates': 'error',
+      'semi': ['error', 'always'],
 
-      // TypeScript improvements
-      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
-      "@typescript-eslint/no-empty-object-type": "off"
+      // TS stuff
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-empty-object-type': 'off',
+      'no-empty-pattern': 'off',
     },
   },
 ]);
