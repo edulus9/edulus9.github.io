@@ -11,7 +11,8 @@
     "check:types": "tsc --noEmit",
     "lint:fix": "eslint --fix",
     "husky:lint": "eslint src/",
-    "husky:check:types": "tsc --noEmit"
+    "husky:check:types": "tsc --noEmit",
+    "prepare": "husky"
   },
   "dependencies": {
     "@react95/icons": "2.1.1",
