@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
-import { HashRouter as Router } from 'react-router-dom';
-import defaultTheme from 'react95/dist/themes/original';
+import { HashRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { initializeI18N } from 'utils/initializeI18N';
+import { APP_THEME, GlobalStyle } from 'utils/styling';
 import App from './App';
 
 const renderApp = () => {
@@ -13,10 +13,11 @@ const renderApp = () => {
 
   root.render(
     <React.StrictMode>
-      <ThemeProvider theme={defaultTheme}>
-        <Router>
+      <ThemeProvider theme={APP_THEME}>
+        <GlobalStyle />
+        <HashRouter basename={'/'}>
           <App />
-        </Router>
+        </HashRouter>
       </ThemeProvider>
     </React.StrictMode>
   );

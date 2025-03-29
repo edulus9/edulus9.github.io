@@ -26,4 +26,8 @@ I decide to use these technologies in my project:
 
 ### Deploy a new version
 
-** TBA **
+1. Switch to the `develop` branch
+2. Run `npm run install`
+3. Run `npm run predeploy`
+4. Run `npm run deploy`
+5. Wait for the deployment to finish
