@@ -1,5 +1,13 @@
 export const en_US = {
   translation: {
-    start: 'Start!',
+    pages: {
+      home: {
+        pageTitle: 'Home Page',
+        modalTitle: 'Welcome!',
+      },
+    },
+    layout: {
+      startMenu: { label: 'Start' },
+    },
   },
 };
